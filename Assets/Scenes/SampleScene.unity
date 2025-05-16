@@ -587,7 +587,19 @@ MonoBehaviour:
     m_ActionId: a504938a-7dc1-489c-bea8-27474a61ac3d
     m_ActionName: Player/Look
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2051113506}
+        m_TargetAssemblyTypeName: Player_Controller, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d8263b2f-e092-4ab2-9680-7213f502adb3
     m_ActionName: Player/Jump
   - m_PersistentCalls:
@@ -620,6 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpPower: 0
   minXLock: -85
   maxXLock: 85
   lookSensitivity: 0.5
