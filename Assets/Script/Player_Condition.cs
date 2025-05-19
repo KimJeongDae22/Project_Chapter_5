@@ -1,9 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Player_Condition : MonoBehaviour
+using UnityEngine.Accessibility;
+public interface DamageAble
 {
+    void TakeDamage(float damage);
+}
+public class Player_Condition : MonoBehaviour, DamageAble
+{
+    public void TakeDamage(float damage)
+    {
+        health.SubtractValue(damage);
+        OnTakeDamage?.Invoke();
+    }
     public UI_Condition ui_Condition;
 
     Condition health { get { return ui_Condition.GetHealth(); } }
@@ -11,6 +21,8 @@ public class Player_Condition : MonoBehaviour
     Condition stamina { get { return ui_Condition.GetStamina(); } }
 
     [SerializeField] private float noHungerDamage;
+
+    public event Action OnTakeDamage;
     void Update()
     {
         hunger.SubtractValue(hunger.GetPassiveValue() * Time.deltaTime);
@@ -24,10 +36,10 @@ public class Player_Condition : MonoBehaviour
         {
             Die();
         }
-        Debug.Log("µÚÁü;;");
     }
     void Die()
     {
         Debug.Log("µÚÁü;;");
     }
+
 }
