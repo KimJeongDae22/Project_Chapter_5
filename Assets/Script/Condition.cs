@@ -28,4 +28,11 @@ public class Condition : MonoBehaviour
     {
         curValue = Mathf.Max(curValue - value, 0);
     }
+    public float GetPassiveValue()
+    {
+        return passiveValue;
+    }
+    public float GetCurValue()
+        { return curValue; }
+
 }

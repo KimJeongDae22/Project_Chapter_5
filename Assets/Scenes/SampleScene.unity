@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 103013801}
   - component: {fileID: 103013803}
   - component: {fileID: 103013802}
+  - component: {fileID: 103013804}
   m_Layer: 5
   m_Name: HungerBar
   m_TagString: Untagged
@@ -200,6 +201,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103013800}
   m_CullTransparentMesh: 1
+--- !u!114 &103013804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103013800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e31419ac2eb2840ace156151051dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curValue: 0
+  startValue: 400
+  maxValue: 500
+  passiveValue: 10
+  uiBar: {fileID: 931397624}
 --- !u!1 &664528666
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788991105}
   - component: {fileID: 788991106}
+  - component: {fileID: 788991107}
   m_Layer: 5
   m_Name: Condition
   m_TagString: Untagged
@@ -365,6 +384,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &788991107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788991104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3f91b0e5545dd459fd91542d9450c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 936462675}
+  hunger: {fileID: 103013804}
+  stamina: {fileID: 1135645390}
 --- !u!1 &838854151
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +586,7 @@ GameObject:
   - component: {fileID: 936462672}
   - component: {fileID: 936462674}
   - component: {fileID: 936462673}
+  - component: {fileID: 936462675}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -618,6 +653,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936462671}
   m_CullTransparentMesh: 1
+--- !u!114 &936462675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936462671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e31419ac2eb2840ace156151051dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curValue: 0
+  startValue: 100
+  maxValue: 100
+  passiveValue: 1
+  uiBar: {fileID: 1094859110}
 --- !u!1 &996872586
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +831,7 @@ GameObject:
   - component: {fileID: 1135645387}
   - component: {fileID: 1135645389}
   - component: {fileID: 1135645388}
+  - component: {fileID: 1135645390}
   m_Layer: 5
   m_Name: StaminaBar
   m_TagString: Untagged
@@ -845,6 +898,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135645386}
   m_CullTransparentMesh: 1
+--- !u!114 &1135645390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135645386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e31419ac2eb2840ace156151051dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curValue: 0
+  startValue: 100
+  maxValue: 100
+  passiveValue: 5
+  uiBar: {fileID: 1870110763}
 --- !u!1 &1162796315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1442,7 @@ GameObject:
   - component: {fileID: 2051113505}
   - component: {fileID: 2051113507}
   - component: {fileID: 2051113506}
+  - component: {fileID: 2051113508}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1568,6 +1639,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b08cc7266df2b4f9e9977456976669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2051113508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051113501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c5602ea5b58234c8094774ccd446d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_Condition: {fileID: 0}
+  noHungerDamage: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
