@@ -1,3 +1,6 @@
+using System;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +21,10 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float lookSensitivity; // 마우스 감도
     private Vector2 mouseDelta;
     public Transform contain_Camera;
+
+    private bool canLook = true;
+
+    private Action inventory;
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody>();
@@ -29,6 +36,7 @@ public class Player_Controller : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if (canLook)
         CamLook();
         Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f),Vector3.down * 0.1f, Color.blue);
     }
@@ -70,6 +78,14 @@ public class Player_Controller : MonoBehaviour
         Debug.Log("땅 인식 실패");
         return false;
     }
+    public void SetPlayerInven(Action a)
+    {
+        inventory += a;
+    }
+    public void SetCanLook(bool a)
+    {
+        canLook = a;
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
@@ -92,5 +108,19 @@ public class Player_Controller : MonoBehaviour
             _rigid.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
             Debug.Log("점프");
         }
+    }
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+    }
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 }
