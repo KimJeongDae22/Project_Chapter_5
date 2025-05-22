@@ -37,6 +37,14 @@ public class Player_Condition : MonoBehaviour, DamageAble
             Die();
         }
     }
+    public void Heal(float amount)
+    {
+        health.AddValue(amount);
+    }
+    public void Eat(float amount)
+    {
+        hunger.AddValue(amount);
+    }
     void Die()
     {
         Debug.Log("µÚÁü;;");

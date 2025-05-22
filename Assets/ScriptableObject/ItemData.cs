@@ -49,9 +49,11 @@ public class ItemData : ScriptableObject
         { return info; }
     public ItemType GetItemType()
         { return type; }
+    public Sprite GetIcon() { return icon; }
     public bool GetStackAble()
         { return stackAble; }
     public int GetMaxStackAmount()
         { return maxStackAmount; }
-
+    public GameObject DropItem() { return dropItem; }
+    public ItemDataConsumAble[] GetConsumAbles() {  return consumAbles; }
 }

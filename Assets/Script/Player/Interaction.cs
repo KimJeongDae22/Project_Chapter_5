@@ -62,7 +62,7 @@ public class Interaction : MonoBehaviour
             curinteractable.Oninteract();
             curlnteractGameObject = null;
             curinteractable = null;
-            curlnteractGameObject.SetActive(false);
+            //curlnteractGameObject.SetActive(false);
         }
     }
 }

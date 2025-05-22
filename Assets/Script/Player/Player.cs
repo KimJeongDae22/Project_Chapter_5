@@ -6,8 +6,10 @@ public class Player : MonoBehaviour
     private Player_Controller controller;
     private Player_Condition condition;
 
-    public ItemData itemData;
+    private ItemData itemData;
     private Action addIitem;
+
+   [SerializeField]  private Transform dropItemPos;
     void Awake()
     {
         CharacterManager.Instance.Player = this;
@@ -17,5 +19,9 @@ public class Player : MonoBehaviour
     public Player_Controller GetPlayer_Controller() { return controller; }
     public Player_Condition GetCondition() { return condition; }
     public void SetPlayerItemData(ItemData data) { itemData = data; }
+    public ItemData GetPlayerItemData() { return itemData; }
     public Action GetAddItem() { return addIitem; }
+    public void SetAddItem(Action a)
+    { addIitem += a; }
+    public Transform GetDropItemPos() { return dropItemPos; }
 }
