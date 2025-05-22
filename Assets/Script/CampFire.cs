@@ -5,7 +5,7 @@ public class CampFire : MonoBehaviour
 {
     [SerializeField] private float damage;
     [SerializeField] private float damageRate;
-
+    // 불타오르네 파이어~
     List<DamageAble> objs = new List<DamageAble>();
     void Start()
     {
