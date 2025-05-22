@@ -43,6 +43,10 @@ public class ItemData : ScriptableObject
     [Header("소모품")]
     [SerializeField] private ItemDataConsumAble[] consumAbles;
 
+    [Header("장착")]
+    [SerializeField] private GameObject equipPrefab;
+
+
     public string GetName()
     { return name; }
     public string GetInfo()
@@ -56,4 +60,5 @@ public class ItemData : ScriptableObject
         { return maxStackAmount; }
     public GameObject DropItem() { return dropItem; }
     public ItemDataConsumAble[] GetConsumAbles() {  return consumAbles; }
+    public GameObject GetEquipPrefab() { return equipPrefab; }
 }

@@ -23,6 +23,8 @@ public class UI_Inventory : MonoBehaviour
 
     private ItemData selectedItemData;
     private int selectedItemIndex;
+
+    private int curEquipIndex;
     void Start()
     {
         invenWindow = this.gameObject;
@@ -141,7 +143,6 @@ public class UI_Inventory : MonoBehaviour
         }
         return null;
     }
-
     public void SelectItem(int index)
     {
         if (slots[index].GetItemData() == null)
@@ -194,14 +195,48 @@ public class UI_Inventory : MonoBehaviour
     public void RemoveSelectedItem()
     {
         slots[selectedItemIndex].SetQuantity(slots[selectedItemIndex].GetQuantity() - 1);
-
+        if (slots[selectedItemIndex].GetItemData().GetItemType() == ItemType.EquipAble)
+        {
+            UnEquip(selectedItemIndex);
+        }
         if (slots[selectedItemIndex].GetQuantity() <= 0)
         {
             selectedItemData = null;
             slots[selectedItemIndex].SetItemData(null);
+
             selectedItemIndex = -1;
             ClearSelectedItemWindow();
         }
         UI_Update();
+    }
+    public void OnEquipBtn()
+    {
+        //장착 중인 무기가 있을 시 해제
+        if (slots[curEquipIndex].GetEquipped())
+        {
+            UnEquip(curEquipIndex);
+        }
+        slots[selectedItemIndex].SetEquipped(true);
+        curEquipIndex = selectedItemIndex;
+        CharacterManager.Instance.Player.GetEquipment().EquipNew(selectedItemData);
+        UI_Update();
+
+        SelectItem(selectedItemIndex);
+    }
+    void UnEquip(int index)
+    {
+        slots[index].SetEquipped(false);
+        CharacterManager.Instance.Player.GetEquipment().UnEquip();
+        UI_Update();
+
+        if (selectedItemIndex == index)
+        {
+            SelectItem(selectedItemIndex);
+        }
+    }
+
+    public void OnUnEquipBtn()
+    {
+        UnEquip(selectedItemIndex);
     }
 }

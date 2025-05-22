@@ -65,4 +65,6 @@ public class ItemSlot : MonoBehaviour
     { quantity = a; }
     public bool GetEquipped()
         { return equipped; }
+    public void SetEquipped(bool a)
+        { equipped = a; }
 }
