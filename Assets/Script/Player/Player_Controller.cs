@@ -70,12 +70,10 @@ public class Player_Controller : MonoBehaviour
         {
             if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
             {
-                Debug.Log("땅 인식 완료");
                 return true;
             }
 
         }
-        Debug.Log("땅 인식 실패");
         return false;
     }
     public void SetPlayerInven(Action a)

@@ -47,17 +47,12 @@ public class ItemData : ScriptableObject
     [SerializeField] private GameObject equipPrefab;
 
 
-    public string GetName()
-    { return name; }
-    public string GetInfo()
-        { return info; }
-    public ItemType GetItemType()
-        { return type; }
+    public string GetName() { return name; }
+    public string GetInfo() { return info; }
+    public ItemType GetItemType() { return type; }
     public Sprite GetIcon() { return icon; }
-    public bool GetStackAble()
-        { return stackAble; }
-    public int GetMaxStackAmount()
-        { return maxStackAmount; }
+    public bool GetStackAble() { return stackAble; }
+    public int GetMaxStackAmount() { return maxStackAmount; }
     public GameObject DropItem() { return dropItem; }
     public ItemDataConsumAble[] GetConsumAbles() {  return consumAbles; }
     public GameObject GetEquipPrefab() { return equipPrefab; }
