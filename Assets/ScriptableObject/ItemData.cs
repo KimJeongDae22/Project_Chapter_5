@@ -18,8 +18,8 @@ public enum ConsumType
 [Serializable]
 public class ItemDataConsumAble
 {
-    private ConsumType type;
-    private float value;
+    [SerializeField] private ConsumType type;
+    [SerializeField] private float value;
 
     public ConsumType GetConsumType()
     { return type; }

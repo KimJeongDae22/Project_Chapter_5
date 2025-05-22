@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1c900a6a82eab489b10c0dd5fce89e, type: 3}
   m_Name: Item_Rock
   m_EditorClassIdentifier: 
-  name: 
-  info: 
-  type: 0
-  icon: {fileID: 0}
-  dropItem: {fileID: 0}
-  stackAble: 0
-  maxStackAmount: 0
+  name: "\uC9F1\uB3CC"
+  info: "\uD754\uD55C \uB3CC\uC774\uC9C0\uB9CC \uC5B4\uCA4C\uBA74 \uBB34\uD55C\uD55C
+    \uAC00\uB2A5\uC131\uC744 \uAC00\uC9C8 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  type: 2
+  icon: {fileID: 21300000, guid: e61976ceaf6919c47853f5a7ea09288b, type: 3}
+  dropItem: {fileID: 6119824563039098170, guid: 5da258bc3b420ad4183b70c705e4f948, type: 3}
+  stackAble: 1
+  maxStackAmount: 99
   consumAbles: []

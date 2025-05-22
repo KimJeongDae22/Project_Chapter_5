@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1c900a6a82eab489b10c0dd5fce89e, type: 3}
   m_Name: Item_Sword
   m_EditorClassIdentifier: 
-  name: 
-  info: 
+  name: "\uAC80"
+  info: "\uD3C9\uBC94\uD558\uAC8C \uBCFC \uC218 \uC788\uB294 \uAC80\uC785\uB2C8\uB2E4."
   type: 0
-  icon: {fileID: 0}
-  dropItem: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4f2f320a217307a48a107491b1d17ebb, type: 3}
+  dropItem: {fileID: 7814600737165348019, guid: fc439e4f26f6f4a418a16a5bae16a271, type: 3}
   stackAble: 0
   maxStackAmount: 0
   consumAbles: []
