@@ -10,6 +10,7 @@ public class JumpBlock : MonoBehaviour
         if (other.TryGetComponent(out Player_Controller player))
         {
             player.ForceJump(jumpPower);
+            Debug.Log("jump");
         }
     }
 }

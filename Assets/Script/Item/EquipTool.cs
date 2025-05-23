@@ -8,20 +8,10 @@ public class EquipTool : Equip
     [SerializeField] private float atkDistance;
     [SerializeField] private bool isAtk;
 
-    [Header("¸®¼Ò½º °Ô´õ¸µ")]
+    [Header("ë¦¬ì†ŒìŠ¤ ê²Œë”ë§")]
     [SerializeField] private bool doesGatherResources;
 
-    [Header("ÄÄºª")]
+    [Header("ì»´ë²³")]
     [SerializeField] private bool doesDealDamage;
     [SerializeField] private int damage;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

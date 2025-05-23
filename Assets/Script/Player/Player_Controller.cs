@@ -43,6 +43,7 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     public void ForceJump(float power)
     {
+        _rigid.velocity = Vector3.zero;
         _rigid.AddForce(Vector2.up * power, ForceMode.Impulse);
     }
     void Move()
@@ -61,7 +62,7 @@ public class Player_Controller : MonoBehaviour
 
         transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
     }
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
         {
