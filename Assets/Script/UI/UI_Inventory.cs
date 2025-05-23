@@ -8,7 +8,7 @@ public class UI_Inventory : MonoBehaviour
     [SerializeField] private Transform slotPanel;
     [SerializeField] private Transform dropItemPos;
 
-    [Header("¼±ÅÃµÈ ¾ÆÀÌÅÛ")]
+    [Header("ì„ íƒëœ ì•„ì´í…œ")]
     [SerializeField] private TextMeshProUGUI selected_ItemName;
     [SerializeField] private TextMeshProUGUI selected_ItemInfo;
     [SerializeField] private TextMeshProUGUI selected_StatName;
@@ -48,8 +48,6 @@ public class UI_Inventory : MonoBehaviour
         }
         ClearSelectedItemWindow();
     }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -82,7 +80,7 @@ public class UI_Inventory : MonoBehaviour
     void AddItem()
     {
         ItemData data = CharacterManager.Instance.Player.GetPlayerItemData();
-        // ¾ÆÀÌÅÛ Áßº¹ °¡´É Ã¼Å©
+        // ì•„ì´í…œ ì¤‘ë³µ ê°€ëŠ¥ ì²´í¬
         if (data.GetStackAble())
         {
             ItemSlot slot = GetItemStack(data);
@@ -94,9 +92,9 @@ public class UI_Inventory : MonoBehaviour
                 return;
             }
         }
-        // ºñ¾îÀÖ´Â ½½·Ô °¡Á®¿À±â
+        // ë¹„ì–´ìˆëŠ” ìŠ¬ë¡¯ ê°€ì ¸ì˜¤ê¸°
         ItemSlot emptySlot = GetEmptySlot();
-        // ºñ¾îÀÖ´Â ½½·Ô ÀÖÀ¸¸é
+        // ë¹„ì–´ìˆëŠ” ìŠ¬ë¡¯ ìˆìœ¼ë©´
         if (emptySlot != null)
         {
             emptySlot.SetItemData(data);
@@ -105,7 +103,7 @@ public class UI_Inventory : MonoBehaviour
             CharacterManager.Instance.Player.SetPlayerItemData(null);
             return;
         }
-        // ¾øÀ¸¸é
+        // ì—†ìœ¼ë©´
         ThrowItem(data);
         CharacterManager.Instance.Player.SetPlayerItemData(null);
     }
@@ -211,7 +209,7 @@ public class UI_Inventory : MonoBehaviour
     }
     public void OnEquipBtn()
     {
-        //ÀåÂø ÁßÀÎ ¹«±â°¡ ÀÖÀ» ½Ã ÇØÁ¦
+        //ì¥ì°© ì¤‘ì¸ ë¬´ê¸°ê°€ ìˆì„ ì‹œ í•´ì œ
         if (slots[curEquipIndex].GetEquipped())
         {
             UnEquip(curEquipIndex);
