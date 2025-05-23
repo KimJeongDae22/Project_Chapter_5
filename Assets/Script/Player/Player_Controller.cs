@@ -8,17 +8,17 @@ public class Player_Controller : MonoBehaviour
 {
     private Rigidbody _rigid;
 
-    [Header("π´∫Í")]
+    [Header("Î¨¥Î∏å")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpPower;
     private Vector2 curMovementInput;
     [SerializeField] private LayerMask groundLayerMask;
  
-    [Header("«√∑π¿ÃæÓ Ω√¡°")]
+    [Header("ÌîåÎ†àÏù¥Ïñ¥ ÏãúÏ†ê")]
     [SerializeField] private float minXLock;
     [SerializeField] private float maxXLock;
     private float camCurXRotate;
-    [SerializeField] private float lookSensitivity; // ∏∂øÏΩ∫ ∞®µµ
+    [SerializeField] private float lookSensitivity; // ÎßàÏö∞Ïä§ Í∞êÎèÑ
     private Vector2 mouseDelta;
     public Transform contain_Camera;
 
@@ -41,6 +41,10 @@ public class Player_Controller : MonoBehaviour
         Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f),Vector3.down * 0.1f, Color.blue);
     }
     // Update is called once per frame
+    public void ForceJump(float power)
+    {
+        _rigid.AddForce(Vector2.up * power, ForceMode.Impulse);
+    }
     void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
@@ -104,7 +108,7 @@ public class Player_Controller : MonoBehaviour
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
             _rigid.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
-            Debug.Log("¡°«¡");
+            Debug.Log("Ï†êÌîÑ");
         }
     }
     public void OnInventory(InputAction.CallbackContext context)
